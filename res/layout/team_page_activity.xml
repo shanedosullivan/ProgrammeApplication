@@ -1,0 +1,410 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" 
+	    android:background="@drawable/background"
+	    tools:context="com.programme.TeamPageActivity" >
+	
+	    <Button
+	        android:id="@+id/playerButton1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	
+	    <Button
+	        android:id="@+id/playerButton2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton1"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton1"
+	        android:layout_alignStart="@+id/playerButton1"
+	        android:layout_below="@+id/playerButton1"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	
+	    <Button
+	        android:id="@+id/playerButton4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton1"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="14dp"
+	        android:layout_marginEnd="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton2"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton6"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton3"
+	        android:layout_alignStart="@+id/playerButton3"
+	        android:layout_below="@+id/playerButton3"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton7"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton4"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="14dp"
+	        android:layout_marginEnd="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton8"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton5"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="50dp"
+	        android:layout_marginStart="50dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton9"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton7"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="50dp"
+	        android:layout_marginEnd="50dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton10"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton8"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton11"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton6"
+	        android:layout_alignStart="@+id/playerButton6"
+	        android:layout_below="@+id/playerButton8"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton12"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton9"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="14dp"
+	        android:layout_marginEnd="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton13"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton10"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton14"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton11"
+	        android:layout_alignStart="@+id/playerButton11"
+	        android:layout_below="@+id/playerButton11"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton15"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton12"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="14dp"
+	        android:layout_marginEnd="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    
+	    
+	    <Button
+	        android:id="@+id/playerButton16"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton13"
+	        android:layout_marginTop="54dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton17"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton14"
+	        android:layout_alignStart="@+id/playerButton14"
+	        android:layout_below="@+id/playerButton14"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="54dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton18"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton15"
+	        android:layout_marginTop="54dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentEnd="true"
+	        android:layout_marginRight="14dp"
+	        android:layout_marginEnd="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton19"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton16"
+	        android:layout_marginTop="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton20"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton18"
+	        android:layout_alignStart="@+id/playerButton18"
+	        android:layout_below="@+id/playerButton18"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton21"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton17"
+	        android:layout_alignStart="@+id/playerButton17"
+	        android:layout_below="@+id/playerButton17"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton22"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton19"
+	        android:layout_marginTop="18dp"
+	        android:layout_marginBottom="18dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentStart="true"
+	        android:layout_marginLeft="14dp"
+	        android:layout_marginStart="14dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton23"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton20"
+	        android:layout_alignStart="@+id/playerButton20"
+	        android:layout_below="@+id/playerButton20"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:layout_marginBottom="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <Button
+	        android:id="@+id/playerButton24"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playerButton21"
+	        android:layout_alignStart="@+id/playerButton21"
+	        android:layout_below="@+id/playerButton21"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="18dp"
+	        android:layout_marginBottom="18dp"
+	        android:background="@drawable/buttonshapewhite"
+	        android:onClick="startPlayerActivity"
+	        android:text="Button"
+	        android:textColor="#36AEFF"
+	        android:textSize="10sp" />
+	    
+	    <ProgressBar
+		   android:id="@+id/refreshSpinner"
+		   style="?android:attr/progressBarStyleLarge"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:layout_centerVertical="true" 
+		   android:translationZ="2dp"
+		   android:layout_centerHorizontal="true" />
+
+	    <TextView
+	        android:id="@+id/subsTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/playerButton14"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="16dp"
+	        android:textColor="#FFFFFF"
+	        android:text="@string/subs"/>
+	
+	</RelativeLayout>
+</ScrollView>

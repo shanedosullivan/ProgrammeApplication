@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com.pkmmte.circularimageview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/background"
+    tools:context="com.programme.CoverPageActivity">
+        
+    <Button
+        android:id="@+id/teamButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp"
+        android:onClick="startTeamActivity"
+        android:background="@drawable/buttonshapewhite"
+        android:textColor="#36AEFF"
+        android:text="Button"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/teamButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:onClick="startTeamActivity"
+        android:background="@drawable/buttonshapewhite"
+        android:textColor="#36AEFF"
+        android:text="Button"
+        android:textSize="10sp" />
+
+    <com.pkmmte.circularimageview.CircularImageView
+        android:id="@+id/homeTeamImageView"
+        android:background="@drawable/imagebackground"
+        custom:border="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/teamButton1"
+        android:layout_alignLeft="@+id/teamButton1"
+        android:layout_alignStart="@+id/teamButton1"
+        android:layout_marginBottom="30dp" />
+    
+    <com.pkmmte.circularimageview.CircularImageView
+        android:id="@+id/awayTeamImageView"
+        android:background="@drawable/imagebackground"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/teamButton2"
+        android:layout_alignRight="@+id/teamButton2"
+        android:layout_alignEnd="@+id/teamButton2"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/vsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
+        android:text="@string/vs_label" />
+
+    <TextView
+        android:id="@+id/throwInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:text="TextView" />
+    
+    <TextView
+        android:id="@+id/venueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFFFFF"
+        android:text="TextView" />
+    
+    <TextView
+        android:id="@+id/competitionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:textColor="#FFFFFF"
+        android:text="TextView" />
+    
+    <TextView
+        android:id="@+id/refereeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textColor="#FFFFFF"
+        android:text="TextView" />
+    
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="#FFFFFF"
+        android:text="TextView" />
+    
+    <ProgressBar
+	   android:id="@+id/refreshSpinner"
+	   style="?android:attr/progressBarStyleLarge"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:layout_centerVertical="true" 
+	   android:translationZ="2dp"
+	   android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

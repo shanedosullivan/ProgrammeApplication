@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="com.programme.PlayerActivity" >
+
+    <!-- Player Labels -->
+
+    <!-- Dynamic Player Info -->
+   
+    <ProgressBar
+	   android:id="@+id/refreshSpinner"
+	   style="?android:attr/progressBarStyleLarge"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:layout_centerVertical="true" 
+	   android:translationZ="2dp"
+	   android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/profileImageView"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+    
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:scaleType="centerCrop"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/ageLabelTextView"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+		android:padding="1dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/ageLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/age_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ageLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/clubLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/ageLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/club_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/clubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/clubLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/countyLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/clubLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/county_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/countyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/countyLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+   
+    <TextView
+        android:id="@+id/goalsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/countyLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/goals_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/goalsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/goalsLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/pointsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/goalsLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/points_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/pointsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pointsLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+   
+    <TextView
+        android:id="@+id/widesLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/pointsLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/wides_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/widesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/widesLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/yellowCardLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/widesLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/yellow_card_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/yellowCardTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/yellowCardLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/redCardLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/yellowCardLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/red_card_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/redCardTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/redCardLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/blackCardLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_alignTop="@+id/redCardLabelTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/black_card_label"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/blackCardTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/blackCardLabelTextView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>
