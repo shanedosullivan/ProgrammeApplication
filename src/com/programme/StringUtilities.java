@@ -1,6 +1,5 @@
 package com.programme;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -24,5 +23,13 @@ public class StringUtilities {
 		String dateString = null;
 		dateString = sdf.format(date);
 		return dateString;
+	}
+	
+	public static String ellipsize(String s){
+		String returnedString = s;
+		if(s.length()>10){
+			returnedString = s.substring(0, 7)+"...";
+			}
+		return returnedString;   
 	}
 }

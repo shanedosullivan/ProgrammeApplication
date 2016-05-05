@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.programme.ImageUtilities;
 import com.programme.R;
+import com.programme.StringUtilities;
 import com.programme.domain.LiveScoreInfo;
 import com.programme.domain.Player;
 import com.programme.services.PlayerSelectionService;
@@ -55,21 +56,22 @@ public class PlayerActivity extends Activity{
 		playerSelectionServiceIntent.putExtra("teamName", playerOnIntent.getCounty());
 		playerSelectionServiceIntent.getStringExtra("playerText");
 		startService(playerSelectionServiceIntent);
-        finish();
+		isRefreshed = true;
 	}
 	
     protected void onPause() {
         super.onPause();
         unregisterReceiver(updateActivityBroadcastReceiver);
         if(isRefreshed){
+        	spinner.setVisibility(View.VISIBLE);
         	finish();
         }
     }
     
     @Override
     public void onBackPressed(){
-    	super.onBackPressed();
     	spinner.setVisibility(View.VISIBLE);
+    	super.onBackPressed();
     }
     
     BroadcastReceiver updateActivityBroadcastReceiver = new BroadcastReceiver(){
@@ -97,15 +99,17 @@ public class PlayerActivity extends Activity{
 		TextView yellowCardInfoTextView = (TextView) findViewById(R.id.yellowCardTextView);
 		TextView redCardInfoTextView = (TextView) findViewById(R.id.redCardTextView);
 		TextView blackCardInfoTextView = (TextView) findViewById(R.id.blackCardTextView);
+		TextView numberInfoTextView = (TextView) findViewById(R.id.numberTextView);
 		ImageView imageView = (ImageView) findViewById(R.id.profileImageView);
 		
 		nameInfoTextView.setText(playerOnIntent.getNumber()+".\n"+playerOnIntent.getFirstName()+"\n"+playerOnIntent.getLastName());
-		clubInfoTextView.setText(playerOnIntent.getClub());
-		countyInfoTextView.setText(playerOnIntent.getCounty());
-		ageInfoTextView.setText(String.valueOf(playerOnIntent.getAge()));
+		clubInfoTextView.setText(StringUtilities.ellipsize(playerOnIntent.getClub()));
+		countyInfoTextView.setText(StringUtilities.ellipsize(playerOnIntent.getCounty()));
+		ageInfoTextView.setText(" "+String.valueOf(playerOnIntent.getAge()));
 		yellowCardInfoTextView.setText(String.valueOf(playerOnIntent.getYellowCard()));
 		redCardInfoTextView.setText(String.valueOf(playerOnIntent.getRedCard()));
 		blackCardInfoTextView.setText(String.valueOf(playerOnIntent.getBlackCard()));
+		numberInfoTextView.setText(String.valueOf(playerOnIntent.getNumber()));
 		
 		LiveScoreInfo playerLiveInfoOnIntent = (LiveScoreInfo) playerOnIntent.getLiveScoreInfo();
 		

@@ -9,7 +9,7 @@ import com.programme.rest.client.RestClient;
 
 public class GCMRegistrationDaoImpl implements GCMRegistrationDao{
 
-	private static final String baseUrl = "http://192.168.1.104:8080/ProgrammeServerApplication/";
+	private static final String baseUrl = "http://192.168.1.139:8080/ProgrammeServerApplication/";
 	private static final String registrationPathVariable = "registration";
 	private static final String POST = "POST";
 	

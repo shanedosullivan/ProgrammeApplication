@@ -17,7 +17,7 @@ import com.programme.rest.client.RestClient;
 
 public class FixtureDaoImpl implements FixtureDao{
 	
-	private static final String baseUrl = "http://192.168.1.103:8080/ProgrammeServerApplication/";
+	private static final String baseUrl = "http://192.168.1.139:8080/ProgrammeServerApplication/";
 	private static final String fixturesPathVariable = "fixtures";
 	private static final String fixturePathVariable = "fixture";
 	private static final String GET = "GET";

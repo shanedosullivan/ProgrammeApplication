@@ -76,14 +76,15 @@ public class TeamPageActivity extends Activity{
         super.onPause();
         unregisterReceiver(updateActivityBroadcastReceiver);
         if(isRefreshed){
+        	spinner.setVisibility(View.VISIBLE);
         	finish();
         }
     }
 	
     @Override
     public void onBackPressed(){
-    	super.onBackPressed();
     	spinner.setVisibility(View.VISIBLE);
+    	super.onBackPressed();
     }
     
 	@Override

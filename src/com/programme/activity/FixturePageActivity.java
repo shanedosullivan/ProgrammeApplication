@@ -30,7 +30,7 @@ import com.programme.services.PlayerSelectionService;
 public class FixturePageActivity extends Activity implements OnClickListener{
 
 	private static final String FINISH_ACTIVITY = "finish activity";
-	
+	private ProgressBar spinner;
 	private boolean isRefreshed;
 	
 	@Override
@@ -40,6 +40,8 @@ public class FixturePageActivity extends Activity implements OnClickListener{
 		Bundle fixturesBundle = fixturesIntent.getBundleExtra("fixturesBundle");
 		ArrayList<Fixture> fixtures = fixturesBundle.getParcelableArrayList("fixtures");
 		setContentView(R.layout.fixture_page_activity);
+		spinner = (ProgressBar)findViewById(R.id.refreshSpinner);
+		spinner.setVisibility(View.GONE);
 		registerReceiver(updateActivityBroadcastReceiver, new IntentFilter(FINISH_ACTIVITY));
 		this.setFixtureInfo(fixtures);
 	}
@@ -63,14 +65,9 @@ public class FixturePageActivity extends Activity implements OnClickListener{
         super.onPause();
         unregisterReceiver(updateActivityBroadcastReceiver);
         if(isRefreshed){
+        	spinner.setVisibility(View.VISIBLE);
         	finish();
         }
-    }
-    @Override
-    public void onBackPressed(){
-    	super.onBackPressed();
-    	ProgressBar spinner = (ProgressBar)findViewById(R.id.refreshSpinner);
-    	spinner.setVisibility(View.VISIBLE);
     }
 	
 	

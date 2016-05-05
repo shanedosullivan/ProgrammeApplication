@@ -20,7 +20,7 @@ import com.programme.rest.client.RestClient;
 
 public class PlayerDaoImpl implements PlayerDao{
 
-	private final static String baseUrl = "http://192.168.1.104:8080/ProgrammeServerApplication/";
+	private final static String baseUrl = "http://192.168.1.139:8080/ProgrammeServerApplication/";
 	private final static String playerPathVariable = "player";
 	private final static String playersPathVariable = "players";
 	private static final String GET = "GET";

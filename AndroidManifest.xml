@@ -57,7 +57,7 @@
 		  </intent-filter>
 		</service>
         
-        <activity android:name="com.programme.activity.PlayerActivity"> </activity>
+        <activity android:name="com.programme.activity.PlayerActivity" android:screenOrientation="portrait"> </activity>
         <activity android:name="com.programme.activity.TeamPageActivity"> </activity>
         <activity android:name="com.programme.activity.FixturePageActivity"> </activity>
         <activity android:name="com.programme.activity.CoverPageActivity"> </activity>

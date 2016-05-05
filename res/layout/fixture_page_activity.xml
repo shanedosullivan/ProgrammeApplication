@@ -16,5 +16,14 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:text="" />
+    
+    <ProgressBar
+	   android:id="@+id/refreshSpinner"
+	   style="?android:attr/progressBarStyleLarge"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:layout_centerVertical="true" 
+	   android:translationZ="2dp"
+	   android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

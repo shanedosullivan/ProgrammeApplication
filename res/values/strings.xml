@@ -3,17 +3,18 @@
 
     <string name="app_name">MatchDay</string>
     <string name="action_settings">Settings</string>
-    <string name="age_label">Age: </string>
-    <string name="club_label">Club: </string>
-    <string name="county_label">County: </string>
-    <string name="points_label">Points: </string>
-    <string name="goals_label">Goals: </string>
-    <string name="wides_label">Wides: </string>
-    <string name="yellow_card_label">Yellow Card: </string>
-    <string name="red_card_label">Red Card: </string>
-    <string name="black_card_label">Black Card: </string>
+    <string name="age_label">Age:  </string>
+    <string name="club_label">Club</string>
+    <string name="county_label">County</string>
+    <string name="points_label">Points</string>
+    <string name="goals_label">Goals</string>
+    <string name="wides_label">Wides</string>
+    <string name="yellow_card_label">Yellows</string>
+    <string name="red_card_label">Reds</string>
+    <string name="black_card_label">Black</string>
     <string name="vs_label">Vs</string>
     <string name="gcm_defaultSenderId">569457637554</string>
     <string name="subs">Subs</string>
+    <string name="no_label">No. </string>
 
 </resources>
