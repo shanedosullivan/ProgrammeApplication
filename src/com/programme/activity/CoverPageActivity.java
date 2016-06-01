@@ -1,6 +1,8 @@
 package com.programme.activity;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pkmmte.circularimageview.CircularImageView;
 import com.programme.CalculationUtilities;
@@ -24,10 +27,12 @@ import com.programme.dao.FixtureDao;
 import com.programme.dao.FixtureDaoImpl;
 import com.programme.domain.Fixture;
 import com.programme.services.TeamSelectionService;
+import com.programme.services.task.FixturesRefreshTask;
 
 public class CoverPageActivity extends Activity{
 	
 	private static final String FINISH_ACTIVITY = "finish activity";
+	private static final String REFRESH_MSG = "Refreshing Info...";
 	
 	private FixtureDao fixtureDao;
 	
@@ -66,10 +71,11 @@ public class CoverPageActivity extends Activity{
     	fixtureDao = new FixtureDaoImpl();
 		Intent fixturesIntent = getIntent();
 		Fixture selectedFixture = fixturesIntent.getParcelableExtra("fixture");
-		Intent coverPageActivityIntent = new Intent(getBaseContext(), CoverPageActivity.class);
-		coverPageActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		coverPageActivityIntent.putExtra("fixture", fixtureDao.retrieveFixtureByTeamName(selectedFixture.getTeams().get(0).getId(), selectedFixture.getTeams().get(1).getId(), new Date()));
-		this.startActivity(coverPageActivityIntent);
+		Map<String, Object> taskParams = new HashMap<String, Object>();
+		taskParams.put("ctx", getApplicationContext());
+		taskParams.put("teamId1", selectedFixture.getTeams().get(0).getId());
+		taskParams.put("teamId2", selectedFixture.getTeams().get(1).getId());
+		new FixturesRefreshTask().execute(taskParams);
 		isRefreshed = true;
 	}
 	
@@ -78,6 +84,7 @@ public class CoverPageActivity extends Activity{
         super.onPause();
         unregisterReceiver(updateActivityBroadcastReceiver);
         if(isRefreshed){
+        	Toast.makeText(getApplicationContext(), REFRESH_MSG, Toast.LENGTH_SHORT).show();
         	spinner.setVisibility(View.VISIBLE);
         	finish();
         }
@@ -85,6 +92,7 @@ public class CoverPageActivity extends Activity{
 	
     @Override
     public void onBackPressed(){
+    	Toast.makeText(getApplicationContext(), REFRESH_MSG, Toast.LENGTH_SHORT).show();
     	spinner.setVisibility(View.VISIBLE);
     	super.onBackPressed();
     }

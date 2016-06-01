@@ -633,11 +633,12 @@ int layout abc_search_dropdown_item_icons_2line 0x7f030014
 int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_programme_main 0x7f030017
-int layout cover_page_activity 0x7f030018
-int layout fixture_page_activity 0x7f030019
-int layout player_page_activity 0x7f03001a
-int layout support_simple_spinner_dropdown_item 0x7f03001b
-int layout team_page_activity 0x7f03001c
+int layout base_activity 0x7f030018
+int layout cover_page_activity 0x7f030019
+int layout fixture_page_activity 0x7f03001a
+int layout player_page_activity 0x7f03001b
+int layout support_simple_spinner_dropdown_item 0x7f03001c
+int layout team_page_activity 0x7f03001d
 int menu main 0x7f0d0000
 int raw gtm_analytics 0x7f050000
 int string abc_action_bar_home_description 0x7f07002d

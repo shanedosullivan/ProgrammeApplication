@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.programme.CalculationUtilities;
 import com.programme.R;
@@ -30,6 +31,7 @@ import com.programme.services.PlayerSelectionService;
 public class FixturePageActivity extends Activity implements OnClickListener{
 
 	private static final String FINISH_ACTIVITY = "finish activity";
+	private static final String REFRESH_MSG = "Refreshing Info...";
 	private ProgressBar spinner;
 	private boolean isRefreshed;
 	
@@ -65,6 +67,7 @@ public class FixturePageActivity extends Activity implements OnClickListener{
         super.onPause();
         unregisterReceiver(updateActivityBroadcastReceiver);
         if(isRefreshed){
+        	Toast.makeText(getApplicationContext(), REFRESH_MSG, Toast.LENGTH_SHORT).show();
         	spinner.setVisibility(View.VISIBLE);
         	finish();
         }

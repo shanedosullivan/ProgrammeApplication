@@ -3,6 +3,7 @@ package com.programme.services;
 import java.util.ArrayList;
 import java.util.Date;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,18 +14,16 @@ import com.programme.dao.FixtureDao;
 import com.programme.dao.FixtureDaoImpl;
 import com.programme.domain.Fixture;
 
-public class FixtureService extends Service{
+public class FixtureService extends IntentService{
 
-	private FixtureDao fixtureDao;
-	
-	@Override
-	public IBinder onBind(Intent intent) {
-		// TODO Auto-generated method stub
-		return null;
+	public FixtureService() {
+		super("FixtureService");
 	}
 
+	private FixtureDao fixtureDao;
+
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId){
+	protected void onHandleIntent(Intent intent) {
 		fixtureDao = new FixtureDaoImpl();
 		ArrayList<Fixture> fixtures = (ArrayList<Fixture>)fixtureDao.retrieveAllFixtures(new Date());
 		Intent fixturePageActivityIntent = new Intent(getBaseContext(), FixturePageActivity.class);
@@ -33,6 +32,6 @@ public class FixtureService extends Service{
 		fixturesBundle.putParcelableArrayList("fixtures", fixtures);
 		fixturePageActivityIntent.putExtra("fixturesBundle", fixturesBundle);
 		this.startActivity(fixturePageActivityIntent);
-		return START_NOT_STICKY;
+		
 	}
 }

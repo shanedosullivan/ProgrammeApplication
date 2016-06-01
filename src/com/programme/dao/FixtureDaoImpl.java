@@ -30,21 +30,11 @@ public class FixtureDaoImpl implements FixtureDao{
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("date", StringUtilities.convertDateToString(date, "yyyy-MM-dd"));
 		url = StringUtilities.convertToRestUrl(url, params);
-		Map<String, String> restParams = new HashMap<String, String>();
-		restParams.put("url", url);
-		restParams.put("type", GET);
-		try {
-			String result = restClient.execute(restParams).get();
-			Type listType = new TypeToken<ArrayList<Fixture>>(){}.getType();
-			if(!result.isEmpty()){
-				fixtures = new Gson().fromJson(result, listType);
-			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+		String result = restClient.get(url);
+		Type listType = new TypeToken<ArrayList<Fixture>>(){}.getType();
+		if(!result.isEmpty()){
+			fixtures = new Gson().fromJson(result, listType);
 		}
 		return fixtures;
 	}
@@ -59,20 +49,10 @@ public class FixtureDaoImpl implements FixtureDao{
 		params.put("homeTeamId", homeTeamId + "");
 		params.put("awayTeamId", awayTeamId + "");
 		url = StringUtilities.convertToRestUrl(url, params);
-		Map<String, String> restParams = new HashMap<String, String>();
-		restParams.put("url", url);
-		restParams.put("type", GET);
-		try{
-			String result = restClient.execute(restParams).get();
-			Type listType = new TypeToken<Fixture>(){}.getType();
-			fixture = new Gson().fromJson(result, listType);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		String result = restClient.get(url);
+		Type listType = new TypeToken<Fixture>(){}.getType();
+		fixture = new Gson().fromJson(result, listType);
 		
 		return fixture;
 	}

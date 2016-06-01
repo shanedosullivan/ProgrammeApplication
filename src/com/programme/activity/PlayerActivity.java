@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.programme.ImageUtilities;
 import com.programme.R;
@@ -23,8 +24,8 @@ public class PlayerActivity extends Activity{
 	
 	private static final String FINISH_ACTIVITY = "finish activity";
 	private ProgressBar spinner;
-	
 	private boolean isRefreshed;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -1,18 +1,17 @@
 package com.programme.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ProgressBar;
 
 import com.programme.R;
 import com.programme.services.ConnectivityService;
 import com.programme.services.FixtureService;
 import com.programme.services.GCMRegistrationIntentService;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
