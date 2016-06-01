@@ -1,6 +1,7 @@
 package com.programme.services;
 
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -11,18 +12,16 @@ import com.programme.dao.PlayerDaoImpl;
 import com.programme.domain.LiveScoreInfo;
 import com.programme.domain.Player;
 
-public class PlayerSelectionService extends Service{
+public class PlayerSelectionService extends IntentService{
 
-	private PlayerDao dao;
-	
-	@Override
-	public IBinder onBind(Intent intent) {
-		// TODO Auto-generated method stub
-		return null;
+	public PlayerSelectionService() {
+		super("PlayerSelectionService");
 	}
 
+	private PlayerDao dao;
+
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId){
+	protected void onHandleIntent(Intent intent) {
 		dao = new PlayerDaoImpl();
 		
 		String playerText = intent.getStringExtra("playerText");
@@ -35,6 +34,6 @@ public class PlayerSelectionService extends Service{
 		Player player = dao.retrievePlayer(playerNames[0], playerNames[1], teamName);
 		playerActivityIntent.putExtra("player", player);
 		this.startActivity(playerActivityIntent);
-		return START_NOT_STICKY;
+		
 	}
 }

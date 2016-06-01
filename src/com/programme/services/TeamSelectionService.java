@@ -2,6 +2,7 @@ package com.programme.services;
 
 import java.util.ArrayList;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,16 +13,14 @@ import com.programme.dao.PlayerDao;
 import com.programme.dao.PlayerDaoImpl;
 import com.programme.domain.Player;
 
-public class TeamSelectionService extends Service{
+public class TeamSelectionService extends IntentService{
+
+	public TeamSelectionService() {
+		super("TeamSelectionService");
+	}
 
 	@Override
-	public IBinder onBind(Intent intent) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public int onStartCommand(Intent intent, int flags, int startId){
+	protected void onHandleIntent(Intent intent) {
 		String teamName = intent.getStringExtra("teamName");
 		ArrayList<Player> playersOnTeam = new ArrayList<Player>();
 
@@ -35,7 +34,7 @@ public class TeamSelectionService extends Service{
 		playersBundle.putParcelableArrayList("playersOnTeam", playersOnTeam);
 		teamActivityIntent.putExtra("playersBundle", playersBundle);
 		this.startActivity(teamActivityIntent);
-		return START_NOT_STICKY;
+		
 	}
 
 }

@@ -21,18 +21,8 @@ public class GCMRegistrationDaoImpl implements GCMRegistrationDao{
 		Map<String, String> urlParams = new HashMap<String, String>();
 		urlParams.put("token", token);
 		url = StringUtilities.convertToRestUrl(url, urlParams);
-		Map<String, String> restParams = new HashMap<String, String>();
-		restParams.put("url", url);
-		restParams.put("type", POST);
-		try {
-			restClient.execute(restParams).get();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		restClient.post(url);
 	}
 
 }

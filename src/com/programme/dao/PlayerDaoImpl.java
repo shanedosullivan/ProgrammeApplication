@@ -36,20 +36,10 @@ public class PlayerDaoImpl implements PlayerDao{
 		urlParams.put("lastName", lastName);
 		urlParams.put("team", teamName);
 		url = StringUtilities.convertToRestUrl(url, urlParams);
-		Map<String, String> restParams = new HashMap<String, String>();
-		restParams.put("url", url);
-		restParams.put("type", GET);
+
 		String jsonResponseArray;
-		try {
-			jsonResponseArray = restClient.execute(restParams).get();
-			player = new Gson().fromJson(jsonResponseArray, Player.class);
-		} catch (InterruptedException e) {
-			Log.d("Exception", Log.getStackTraceString(e));
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			Log.d("Exception", Log.getStackTraceString(e));
-			e.printStackTrace();
-		}
+		jsonResponseArray = restClient.get(url);
+		player = new Gson().fromJson(jsonResponseArray, Player.class);
 		return player;
 	}
 
@@ -61,21 +51,11 @@ public class PlayerDaoImpl implements PlayerDao{
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("team", teamName);
 		url = StringUtilities.convertToRestUrl(url, params);
-		Map<String, String> restParams = new HashMap<String, String>();
-		restParams.put("url", url);
-		restParams.put("type", GET);
+
 		String jsonResponseArray;
-		try {
-			jsonResponseArray = restClient.execute(restParams).get();
-			Type listType = new TypeToken<ArrayList<Player>>(){}.getType();
-			playersOnTeam = new Gson().fromJson(jsonResponseArray, listType);
-		} catch (InterruptedException e) {
-			Log.d("Exception", Log.getStackTraceString(e));
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			Log.d("Exception", Log.getStackTraceString(e));
-			e.printStackTrace();
-		}
+		jsonResponseArray = restClient.get(url);
+		Type listType = new TypeToken<ArrayList<Player>>(){}.getType();
+		playersOnTeam = new Gson().fromJson(jsonResponseArray, listType);
 		
 		return playersOnTeam;
 	}

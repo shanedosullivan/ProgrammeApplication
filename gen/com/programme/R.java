@@ -2328,11 +2328,12 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_programme_main=0x7f030017;
-        public static final int cover_page_activity=0x7f030018;
-        public static final int fixture_page_activity=0x7f030019;
-        public static final int player_page_activity=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
-        public static final int team_page_activity=0x7f03001c;
+        public static final int base_activity=0x7f030018;
+        public static final int cover_page_activity=0x7f030019;
+        public static final int fixture_page_activity=0x7f03001a;
+        public static final int player_page_activity=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int team_page_activity=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;

@@ -18,7 +18,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 
-public class RestClient extends AsyncTask<Map<String, String>, Void, String>{
+public class RestClient{
 
 	private static final String GET = "GET";
 	private static final String POST = "POST";
@@ -86,15 +86,5 @@ public class RestClient extends AsyncTask<Map<String, String>, Void, String>{
 			e.printStackTrace();
 		}
 		return jsonString;
-	}
-
-	@Override
-	protected String doInBackground(Map<String, String>... params) {
-		Map<String, String> param = params[0];
-		
-		if(GET.equals(param.get("type"))) return get(param.get(URL));
-		if(POST.equals(param.get("type"))) return post(param.get(URL));
-		
-		return null;
 	}
 }
