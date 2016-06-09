@@ -9,9 +9,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -106,15 +105,22 @@ public class CoverPageActivity extends Activity{
     	
         @Override
         public void onReceive(Context context, Intent intent) {
-        	fixtureDao = new FixtureDaoImpl();
-    		Intent fixturesIntent = getIntent();
-    		Fixture selectedFixture = fixturesIntent.getParcelableExtra("fixture");
-    		Fixture updatedFixture = fixtureDao.retrieveFixtureByTeamName(selectedFixture.getTeams().get(0).getId(), selectedFixture.getTeams().get(1).getId(), new Date());
-    		Intent coverPageActivityIntent = new Intent(getBaseContext(), CoverPageActivity.class);
-    		coverPageActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    		coverPageActivityIntent.putExtra("fixture", updatedFixture);
-    		startActivity(coverPageActivityIntent);
-    		isRefreshed = true;
+			try {
+	        	fixtureDao = new FixtureDaoImpl();
+	    		Intent fixturesIntent = getIntent();
+	    		Fixture selectedFixture = fixturesIntent.getParcelableExtra("fixture");
+	    		Fixture updatedFixture;
+				updatedFixture = fixtureDao.retrieveFixtureByTeamName(selectedFixture.getTeams().get(0).getId(), selectedFixture.getTeams().get(1).getId(), new Date());
+	    		Intent coverPageActivityIntent = new Intent(getBaseContext(), CoverPageActivity.class);
+	    		coverPageActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    		coverPageActivityIntent.putExtra("fixture", updatedFixture);
+	    		startActivity(coverPageActivityIntent);
+	    		isRefreshed = true;
+			} catch (Exception e) {
+				Log.d("Exception Thrown!", e.getMessage());
+				Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
+				startActivity(errorIntent);
+			}
         }
     };
     

@@ -27,64 +27,46 @@ public class RestClient{
 	private static final String URL = "url";
 
 
-	public String get(String url){
+	public String get(String url) throws ClientProtocolException, IOException{
 		
 		String jsonString = new String();
 		ResponseConverter responseConverter = new ResponseConverter();
 		
-		try {
-			
-			HttpClient httpClient = new DefaultHttpClient();
-			
-			HttpParams params = httpClient.getParams();
-			HttpConnectionParams.setConnectionTimeout(params, 20000);
-			HttpConnectionParams.setSoTimeout(params, 20000);
-			
-			HttpResponse httpResponse = httpClient.execute(new HttpGet(url));
-			
-			InputStream inputStreamResponse = httpResponse.getEntity().getContent();
-			
-			if(inputStreamResponse!=null){
-				jsonString = responseConverter.convertResponseToString(inputStreamResponse);
-			}
+		HttpClient httpClient = new DefaultHttpClient();
 		
-		} catch (ClientProtocolException e) {
-			Log.d("ClientProtocolException", e.toString());
-			e.printStackTrace();
-		} catch (IOException e) {
-			Log.d("IOException", Log.getStackTraceString(e));
-			e.printStackTrace();
+		HttpParams params = httpClient.getParams();
+		HttpConnectionParams.setConnectionTimeout(params, 20000);
+		HttpConnectionParams.setSoTimeout(params, 20000);
+		
+		HttpResponse httpResponse = httpClient.execute(new HttpGet(url));
+		
+		InputStream inputStreamResponse = httpResponse.getEntity().getContent();
+		
+		if(inputStreamResponse!=null){
+			jsonString = responseConverter.convertResponseToString(inputStreamResponse);
 		}
+		
 		return jsonString;
 	}
 	
-	public String post(String url){
+	public String post(String url) throws ClientProtocolException, IOException{
 		
 		String jsonString = new String();
 		ResponseConverter responseConverter = new ResponseConverter();
 		
-		try {
-			
-			HttpClient httpClient = new DefaultHttpClient();
-			HttpParams params = httpClient.getParams();
-			HttpConnectionParams.setConnectionTimeout(params, 20000);
-			HttpConnectionParams.setSoTimeout(params, 20000);
-			
-			HttpResponse httpResponse = httpClient.execute(new HttpPost(url));
-			
-			InputStream inputStreamResponse = httpResponse.getEntity().getContent();
-			
-			if(inputStreamResponse!=null){
-				jsonString = responseConverter.convertResponseToString(inputStreamResponse);
-			}
+		HttpClient httpClient = new DefaultHttpClient();
+		HttpParams params = httpClient.getParams();
+		HttpConnectionParams.setConnectionTimeout(params, 20000);
+		HttpConnectionParams.setSoTimeout(params, 20000);
 		
-		} catch (ClientProtocolException e) {
-			Log.d("ClientProtocolException", e.toString());
-			e.printStackTrace();
-		} catch (IOException e) {
-			Log.d("IOException", Log.getStackTraceString(e));
-			e.printStackTrace();
+		HttpResponse httpResponse = httpClient.execute(new HttpPost(url));
+		
+		InputStream inputStreamResponse = httpResponse.getEntity().getContent();
+		
+		if(inputStreamResponse!=null){
+			jsonString = responseConverter.convertResponseToString(inputStreamResponse);
 		}
+		
 		return jsonString;
 	}
 }

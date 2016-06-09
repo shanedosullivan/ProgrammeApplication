@@ -16,5 +16,6 @@
     <string name="gcm_defaultSenderId">569457637554</string>
     <string name="subs">Subs</string>
     <string name="no_label">No. </string>
-
+    <string name="restart">Restart</string>
+	<string name="error_message">Oops! Looks like we\'ve got some issues...you can restart with the button above</string>
 </resources>

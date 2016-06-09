@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 		
 		Intent registrationIntent = new Intent(getBaseContext(), GCMRegistrationIntentService.class);
 		startService(registrationIntent);
-		
+
 		Intent fixtureServiceIntent = new Intent(getBaseContext(), FixtureService.class);
 		startService(fixtureServiceIntent);
 	}

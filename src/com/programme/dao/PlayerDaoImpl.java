@@ -1,5 +1,6 @@
 package com.programme.dao;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,7 +28,7 @@ public class PlayerDaoImpl implements PlayerDao{
 	private static final String GET = "GET";
 	
 	@Override
-	public Player retrievePlayer(String firstName, String lastName, String teamName) {
+	public Player retrievePlayer(String firstName, String lastName, String teamName) throws ClientProtocolException, IOException {
 		
 		Player player = new Player();
 		RestClient restClient = new RestClient();
@@ -44,7 +46,7 @@ public class PlayerDaoImpl implements PlayerDao{
 	}
 
 	@Override
-	public List<Player> retrievePlayersOnTeam(String teamName) {
+	public List<Player> retrievePlayersOnTeam(String teamName) throws ClientProtocolException, IOException {
 		List<Player> playersOnTeam = new ArrayList<Player>();
 		RestClient restClient = new RestClient();
 		String url = baseUrl+playersPathVariable;

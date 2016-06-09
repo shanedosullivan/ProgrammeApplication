@@ -1,5 +1,6 @@
 package com.programme.dao;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+
+import org.apache.http.client.ClientProtocolException;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,7 +26,7 @@ public class FixtureDaoImpl implements FixtureDao{
 	private static final String GET = "GET";
 
 	@Override
-	public List<Fixture> retrieveAllFixtures(Date date) {
+	public List<Fixture> retrieveAllFixtures(Date date) throws ClientProtocolException, IOException {
 		ArrayList<Fixture> fixtures = new ArrayList<Fixture>();
 		RestClient restClient = new RestClient();
 		String url = baseUrl+fixturesPathVariable;
@@ -40,7 +43,7 @@ public class FixtureDaoImpl implements FixtureDao{
 	}
 
 	@Override
-	public Fixture retrieveFixtureByTeamName(int homeTeamId, int awayTeamId, Date date) {
+	public Fixture retrieveFixtureByTeamName(int homeTeamId, int awayTeamId, Date date) throws ClientProtocolException, IOException {
 		Fixture fixture = new Fixture();
 		RestClient restClient = new RestClient();
 		String url = baseUrl+fixturePathVariable;
